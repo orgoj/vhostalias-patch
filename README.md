@@ -1,7 +1,7 @@
 vhostalias-patch
 ================
 
-TKLPAtch enabling vhos_alias type virtual on TurnkeyLinux LAMP 12
+TKLPAtch enabling vhos_alias type virtual on [TurnkeyLinux LAMP 12](http://www.turnkeylinux.org/lampstack)
 
 New website is automaticaly initialized by creating directory in /data/web/vhost widh domain name.
 
