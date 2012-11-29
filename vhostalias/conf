@@ -9,12 +9,13 @@ install()
 }
 
 # installs virtual apache log splitter
-install vlogger
+install vlogger libapache2-mod-rpaf
 
 adduser --system --no-create-home --uid 1033 www-logs
 mkdir -p /var/log/vlogger
 chown www-logs:www-data /var/log/vlogger
 a2enmod vhost_alias
+a2enmod rpaf
 a2ensite 001-vhost
 
 # disable default site on * and move it to 127.0.0.1
