@@ -1,0 +1,28 @@
+#!/bin/bash -ex
+install()
+{
+    apt-get update
+    DEBIAN_FRONTEND=noninteractive apt-get -y \
+        -o DPkg::Options::=--force-confdef \
+        -o DPkg::Options::=--force-confold \
+        install $@
+}
+
+# installs virtual apache log splitter
+install vlogger
+
+adduser --system --no-create-home --uid 1033 www-logs
+chown www-logs:www-data /var/log/vlogger
+a2enmod vhost_alias
+a2ensite 001-vhost
+
+# disable default site on * and move it to 127.0.0.1
+sed -i.bak 's/<VirtualHost \*:80>/<VirtualHost 127.0.0.1:80>/' /etc/apache2/sites-available/default
+
+/etc/init.d/apache2 reload
+
+cd /data/web/vhost
+ln -s .test `hostname -f`
+
+# tell the world what we've done!
+echo 'vhost_alias tklpatch' >> /etc/issue

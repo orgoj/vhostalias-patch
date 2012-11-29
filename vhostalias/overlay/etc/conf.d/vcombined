@@ -1,0 +1,3 @@
+UseCanonicalName Off
+LogFormat "%V %h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" vcombined
+LogFormat "%V %h %l %u %t \"%r\" %s %b" vcommon
