@@ -1,0 +1,5 @@
+     # enable access for admin by proxy
+     #SetEnvIf X-Forwarded-For ^1\.2\.3\.4$ proxy_allow
+     #Order allow,deny
+     #Satisfy Any
+     #Allow from env=proxy_allow

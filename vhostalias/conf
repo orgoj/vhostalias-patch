@@ -12,6 +12,7 @@ install()
 install vlogger
 
 adduser --system --no-create-home --uid 1033 www-logs
+mkdir -p /var/log/vlogger
 chown www-logs:www-data /var/log/vlogger
 a2enmod vhost_alias
 a2ensite 001-vhost
