@@ -1,0 +1,22 @@
+<VirtualHost *:80>
+VirtualDocumentRoot /data/web/vhost/%0
+
+CustomLog /var/log/apache2/access-vhost.log vcombined
+CustomLog "| /usr/sbin/vlogger -s access.log -u www-logs -g nogroup /var/log/vlogger" vcombined
+
+Alias /vhost-scripts /data/web/vhost-scripts
+ErrorDocument 404 /vhost-scripts/error404.php
+
+ErrorLog /var/log/apache2/error.log
+LogLevel warn
+#LogLevel debug
+
+<Directory "/data/web/vhost">
+    Allow from all
+    Options Indexes FollowSymLinks
+    AllowOverride All
+</Directory>
+
+php_flag register_globals on
+
+</VirtualHost>

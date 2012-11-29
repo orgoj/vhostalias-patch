@@ -1,0 +1,4 @@
+     SetEnvIf X-Forwarded-For ^193\.165\.211\.66 proxy_allow
+     Order allow,deny
+     Satisfy Any
+     Allow from env=proxy_allow
