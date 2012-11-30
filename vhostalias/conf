@@ -16,6 +16,7 @@ mkdir -p /var/log/vlogger
 chown www-logs:www-data /var/log/vlogger
 a2enmod vhost_alias
 a2enmod rpaf
+a2enmod rewrite
 a2ensite 001-vhost
 
 # disable default site on * and move it to 127.0.0.1
