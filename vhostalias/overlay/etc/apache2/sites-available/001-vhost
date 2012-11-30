@@ -1,8 +1,8 @@
 <VirtualHost *:80>
 VirtualDocumentRoot /data/web/vhost/%0
 
-CustomLog /var/log/apache2/access-vhost.log pvcombined
-CustomLog "| /usr/sbin/vlogger -s access.log -u www-logs -g nogroup /var/log/vlogger" pvcombined
+CustomLog /var/log/apache2/access-vhost.log vcombined
+CustomLog "| /usr/sbin/vlogger -s access.log -u www-logs -g nogroup /var/log/vlogger" vcombined
 
 Alias /vhost-scripts /data/web/vhost-scripts
 ErrorDocument 404 /vhost-scripts/error404.php
