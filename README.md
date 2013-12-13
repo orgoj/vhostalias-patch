@@ -10,3 +10,9 @@ Error script support automatic redirect to domain with www.* and show link to go
 Access log are autmaticaly splited by domain in /var/log/vlogger/<domain> with central log in 
 
 NOTE: Some .htacces rewrite need link to /data in domain root dir.
+
+---
+
+Not used any more. 
+Now I use ansible https://github.com/ansible/ansible for configuration. 
+-- Michael Heca
